@@ -17,6 +17,11 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 gem 'fusioncharts-rails'
 
+gem "redd", "~> 0.7"
+
+# Optional fast JSON parser.
+gem "oj", platforms: :ruby
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
