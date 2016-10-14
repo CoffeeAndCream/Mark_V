@@ -3,17 +3,6 @@ class WelcomeController < ApplicationController
   # Filename: `app/controllers/examples_controller.rb`
   # The `fc_json` action is defined to create the column 2D chart.
   def index
-    class Login
-      include HTTParty
-      base_uri 'http://www.reddit.com'
-
-      def post(username, password)
-        options = {:body => {:user => username, :passwd => password, :api_type => 'json'}}
-        self.class.post("/api/login/#{username}", options)
-      end
-    end
-
-    Login.new.post('DrunkWhenSober', '551133')
   # **Step 1:** Create the FusionCharts object in the controller action
   	@chart = Fusioncharts::Chart.new({
       	:height => 400,
@@ -86,3 +75,15 @@ class WelcomeController < ApplicationController
   	})
   end
 end
+
+class Login
+  include HTTParty
+  base_uri 'http://www.reddit.com'
+
+  def post(username, password)
+    options = {:body => {:user => username, :passwd => password, :api_type => 'json'}}
+    self.class.post("/api/login/#{username}", options)
+  end
+end
+
+Login.new.post('DrunkWhenSober', '551133')
