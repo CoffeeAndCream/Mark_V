@@ -1,8 +1,31 @@
 <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+<script>
+  $.getJSON(
+    "http://www.reddit.com/r/pics.json?jsonp=?",
+    function foo(data)
+    {
+      $.each(
+        data.data.children.slice(0, 10),
+        function (i, post) {
+          $("#reddit-content").append( '<br>' + post.data.title );
+          $("#reddit-content").append( '<br>' + post.data.url );
+          $("#reddit-content").append( '<br>' + post.data.permalink );
+          $("#reddit-content").append( '<br>' + post.data.ups );
+          $("#reddit-content").append( '<br>' + post.data.downs );
+          $("#reddit-content").append( '<hr>' );
+        }
+      )
+    }
+  )
+  .success(function() { alert("second success"); })
+  .error(function() { alert("error"); })
+  .complete(function() { alert("complete"); });
+</script>
 <img src="/images/coffee-animated-gif-5.gif" alt="Coffee Cup">
 <p>
   Under construction. Please enjoy this cup of coffee.
 </p>
-<p>TESTING FUSIONCHARTS</p>
+<p>FusionCharts Demo</p>
 <div id="chart-container"></div>
 <%= @chart.render() %>
+<div id="reddit-content"></div>
