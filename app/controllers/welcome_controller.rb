@@ -3,7 +3,6 @@ class WelcomeController < ApplicationController
   # Filename: `app/controllers/examples_controller.rb`
   # The `fc_json` action is defined to create the column 2D chart.
   def index
-
   # **Step 1:** Create the FusionCharts object in the controller action
   	@chart = Fusioncharts::Chart.new({
       	:height => 400,
