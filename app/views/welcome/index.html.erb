@@ -1,12 +1,4 @@
 <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-<script src="http://j.mp/jqymin"></script>
-<script>
-  $.getJSON("http://www.reddit.com/r/pics/.json?jsonp=?", function(data) {
-    $.each(data.data.children, function(i,item){
-        $("<img/>").attr("src", item.data.url).appendTo("#reddit-content");
-    });
-  });
-</script>
 <img src="/images/coffee-animated-gif-5.gif" alt="Coffee Cup">
 <p>
   Under construction. Please enjoy this cup of coffee.
@@ -14,4 +6,3 @@
 <p>FusionCharts Demo</p>
 <div id="chart-container"></div>
 <%= @chart.render() %>
-<div id="reddit-content"></div>

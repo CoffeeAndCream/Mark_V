@@ -3,6 +3,18 @@ class WelcomeController < ApplicationController
   # Filename: `app/controllers/examples_controller.rb`
   # The `fc_json` action is defined to create the column 2D chart.
   def index
+    # Authorization (Web)
+    w = Redd.it(:web, "CLIENT_ID", "SECRET", "REDIRECT_URI", user_agent: "TestSite v1.0.0")
+    url = w.auth_url("random_state", ["identity", "read"], :temporary)
+    puts "Please go to #{url} and enter the code below:"
+    code = gets.chomp
+    w.authorize!(code)
+
+    # Authorization
+    r = Redd.it(:script, "CLIENT_ID", "SECRET", "DrunkWhenSober", "551133", user_agent: "Drunken Prawler")
+    r.authorize!
+
+    # See documentation for more grants.
   # **Step 1:** Create the FusionCharts object in the controller action
   	@chart = Fusioncharts::Chart.new({
       	:height => 400,
