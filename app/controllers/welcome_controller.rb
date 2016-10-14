@@ -1,7 +1,5 @@
 class WelcomeController < ApplicationController
-
   def index
-
     @chart = Fusioncharts::Chart.new({
         width: "600",
         height: "400",
