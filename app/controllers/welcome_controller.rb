@@ -4,58 +4,46 @@ class WelcomeController < ApplicationController
   # The `fc_hash` function is defined to load data from a Ruby Hash. This data will be converted to
   # JSON and the chart will be rendered.
   def index
-    page = Nokogiri::HTML(open("https://www.reddit.com/"))
-    @title = page.css('title').text
-    # **Step 1:** Create the FusionCharts object in the controller action
-    # Create the FusionCharts object in the controller action
+    @import_data = create_hash('public/datasets/IMPJP.csv')
+    graph_arr = []
+
+    @import_data.each do |key, val|
+      graph_arr.push({
+          :label => key,
+          :value => val
+        })
+        end
+
 
     @chart = Fusioncharts::Chart.new({
     	:height => 400,
     	:width => 600,
-    	:type => 'column2d',
+    	:type => 'line',
     	:renderAt => 'chart-container',
-
-      # Chart data is passed to the `dataSource` parameter, as hashes, in the form of
-
-      # key-value pairs.
 
       :dataSource => {
         	:chart => {
             	:caption => 'Comparison of Quarterly Revenue',
-            	:subCaption => @title,
+            	:subCaption => "Sample Data",
             	:xAxisname => 'Quarter',
             	:yAxisName => 'Amount ($)',
             	:numberPrefix => '$',
             	:theme => 'fint',
         	},
-
-      # The `category` hash is defined inside the `categories` array with four key-value pairs
-
-      # that represent the x-axis labels for the four quarters.
-
-        	:categories => [{
-            	:category => [
-                	{ :label => 'Q1' },
-                	{ :label => 'Q2' },
-                	{ :label => 'Q3' },
-                	{ :label => 'Q4' }
-            	]
-        	}],
-        	:dataset =>  [{
-            	:seriesname => 'Previous Year',
-
-      # The `data` hash contains four key-value pairs that are the values for the revenue
-
-      # generated in the previous year.
-
-            	:data =>  [
-                	{ :value => '10000' },
-                	{ :value => '11500' },
-                	{ :value => '12500' },
-                	{ :value => '15000' }
-            	]}
-        	]
+          :data => graph_arr
         }
-      } )
+      })
+  end
+
+  def create_hash(filepath)
+    fake_hash = []
+    dates = []
+    values = []
+    CSV.foreach(filepath, { :col_sep => ',' }) { |key|
+        fake_hash.push(key)
+        dates.push(fake_hash.last[0])
+        values.push(fake_hash.last[1])
+    }
+    Hash[dates.zip(values)]
   end
 end
