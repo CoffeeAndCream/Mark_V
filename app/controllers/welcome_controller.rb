@@ -3,52 +3,54 @@ class WelcomeController < ApplicationController
 
   # JSON and the chart will be rendered.
   def index
-    @test = "Did you drink that coffee?"
-  # Create the FusionCharts object in the controller action
+    while(True):
+        @test = "Did you drink that coffee?"
+      # Create the FusionCharts object in the controller action
 
-  	@chart = Fusioncharts::Chart.new({
-      	:height => 400,
-      	:width => 600,
-      	:type => 'line',
-      	:renderAt => 'chart-container',
+      	@chart = Fusioncharts::Chart.new({
+          	:height => 400,
+          	:width => 600,
+          	:type => 'line',
+          	:renderAt => 'chart-container',
 
-  # Chart data is passed to the `dataSource` parameter, as hashes, in the form of
+      # Chart data is passed to the `dataSource` parameter, as hashes, in the form of
 
-  # key-value pairs.
+      # key-value pairs.
 
-  :dataSource => {
-    	:chart => {
-        	:caption => @test,
-        	:subCaption => 'Coffee Index',
-        	:xAxisname => 'Quarter',
-        	:yAxisName => 'Amount ($)',
-        	:numberPrefix => '$',
-        	:theme => 'fint',
-    	},
+      :dataSource => {
+        	:chart => {
+            	:caption => @test,
+            	:subCaption => 'Coffee Index',
+            	:xAxisname => 'Quarter',
+            	:yAxisName => 'Amount ($)',
+            	:numberPrefix => '$',
+            	:theme => 'fint',
+        	},
 
-  # The `category` hash is defined inside the `categories` array with four key-value pairs
+      # The `category` hash is defined inside the `categories` array with four key-value pairs
 
-  # that represent the x-axis labels for the four quarters.
+      # that represent the x-axis labels for the four quarters.
 
-    	:categories => [{
-        	:category => [
-            	{ :label => 'Q1' },
-            	{ :label => 'Q2' },
-            	{ :label => 'Q3' },
-            	{ :label => 'Q4' }
+        	:categories => [{
+            	:category => [
+                	{ :label => 'Q1' },
+                	{ :label => 'Q2' },
+                	{ :label => 'Q3' },
+                	{ :label => 'Q4' }
+            	]
+        	}],
+        	:dataset =>  [{
+      # The `data` hash contains four key-value pairs that are the values for the revenue
+      # generated in the previous year.
+            	:data =>  [
+                	{ :value => rand(1000... 15000) },
+                	{ :value => '11500' },
+                	{ :value => '12500' },
+                	{ :value => '15000' }
+            	]}
         	]
-    	}],
-    	:dataset =>  [{
-  # The `data` hash contains four key-value pairs that are the values for the revenue
-  # generated in the previous year.
-        	:data =>  [
-            	{ :value => '10000' },
-            	{ :value => '11500' },
-            	{ :value => '12500' },
-            	{ :value => '15000' }
-        	]}
-    	]
-    }
-  })
+        }
+      })
+    end
   end
 end
