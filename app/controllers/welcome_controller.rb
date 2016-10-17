@@ -16,17 +16,17 @@ class WelcomeController < ApplicationController
 
 
     @chart = Fusioncharts::Chart.new({
-    	:height => 700,
-    	:width => 1400,
+    	:height => 600,
+    	:width => 800,
     	:type => 'line',
     	:renderAt => 'chart-container',
 
       :dataSource => {
         	:chart => {
-            	:caption => 'Comparison of Quarterly Revenue',
-            	:subCaption => "Sample Data",
-            	:xAxisname => 'Quarter',
-            	:yAxisName => 'Amount ($)',
+            	:caption => 'Imports from Japan to the USA',
+            	:subCaption => "Imported Goods",
+            	:xAxisname => 'Date Recorded',
+            	:yAxisName => 'Amount of Goods ($ millions)',
             	:numberPrefix => '$',
               :showValues => '0',
             	:theme => 'fint',
