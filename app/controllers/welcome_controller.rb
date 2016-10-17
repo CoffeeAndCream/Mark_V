@@ -46,8 +46,8 @@ class WelcomeController < ApplicationController
       })
 
       @chchart = Fusioncharts::Chart.new({
-      	:height => 600,
-      	:width => 800,
+        :height => 400,
+      	:width => 600,
       	:type => 'line',
       	:renderAt => 'chchart-container',
 
