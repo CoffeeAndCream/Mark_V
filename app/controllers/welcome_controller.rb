@@ -3,10 +3,10 @@ class WelcomeController < ApplicationController
 
   # JSON and the chart will be rendered.
   def index
-    Thread.new do
-      while true do
-        @x = rand(10... 50)
-        sleep 1
+    def rndNum
+      @x = rand(10...50)
+      respond_to do |format|
+        format.js // render your js.erb template
       end
     end
     @test = "Did you drink that coffee?"
