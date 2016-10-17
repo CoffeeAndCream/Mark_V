@@ -15,11 +15,11 @@ class WelcomeController < ApplicationController
         end
 
 
-    @chart = Fusioncharts::Chart.new({
+    @jpchart = Fusioncharts::Chart.new({
     	:height => 600,
     	:width => 800,
     	:type => 'line',
-    	:renderAt => 'chart-container',
+    	:renderAt => 'jpchart-container',
 
       :dataSource => {
         	:chart => {
@@ -42,9 +42,8 @@ class WelcomeController < ApplicationController
     values = []
     CSV.foreach(filepath, { :col_sep => ',' }) { |key|
         fake_hash.push(key)
-        if(fake_hash.last[0] != "DATE")
-          dates.push(fake_hash.last[0])
-          values.push(fake_hash.last[1])
+        dates.push(fake_hash.last[0])
+        values.push(fake_hash.last[1])
     }
     Hash[dates.zip(values)]
   end
