@@ -23,15 +23,15 @@
  }
  #leftcolumn, #rightcolumn {
      border: 1px solid white;
-     float: left;
+     float: center;
      min-height: 450px;
-     color: white;
+     color: #FFFFFF;
  }
  #leftcolumn {
       width: 600px;
-      background-color: #111;
+      background-color: #FFFFFF;
  }
  #rightcolumn {
       width: 600px;
-      background-color: #777;
+      background-color: #FFFFFF;
  }
