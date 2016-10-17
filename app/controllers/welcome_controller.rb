@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   	@chart = Fusioncharts::Chart.new({
       	:height => 400,
       	:width => 600,
-      	:type => 'mscolumn2d',
+      	:type => 'line2d',
       	:renderAt => 'chart-container',
 
   # Chart data is passed to the `dataSource` parameter, as hashes, in the form of
