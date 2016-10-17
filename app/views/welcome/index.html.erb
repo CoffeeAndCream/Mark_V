@@ -6,16 +6,6 @@
 <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
 <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
 <script type="text/javascript">
-window.setInterval(function(){
-  var number = $("#x").value(); // get current number as displayed in template
-  // send the number to the server
-  $.ajax({
-    url: WelcomeController/rndNum,   // your controller
-    data: x, // data
-    success: success,
-    dataType: "script" // not 100% sure here might need to google
-  });
-}, 1000); // ms
   FusionCharts.ready(function(){
     var fusioncharts = new FusionCharts({
     id: "stockRealTimeChart",
@@ -26,11 +16,11 @@ window.setInterval(function(){
     dataFormat: 'json',
     dataSource: {
         "chart": {
-            "caption": "Real-time stock price monitor",
-            "subCaption": "Harry's SuperMart",
+            "caption": "Real-time Coffee Quantity Monitor",
+            "subCaption": "Coffee I've Drank",
             "xAxisName": "Time",
-            "yAxisName": "Stock Price",
-            "numberPrefix": "$",
+            "yAxisName": "Ounces of Coffee",
+            "numberSuffix": "oz",
             "refreshinterval": ".05",
             "yaxisminvalue": "35",
             "yaxismaxvalue": "36",
@@ -47,7 +37,7 @@ window.setInterval(function(){
         }],
         "dataset": [{
             "data": [{
-                "value": "35.27"
+                "value": "10.27"
             }]
         }]
     },
@@ -70,7 +60,8 @@ window.setInterval(function(){
                     // Get random number between 35.25 & 35.75 - rounded to 2 decimal places
                     value = Math.floor(Math.random() * 50) / 100 + 35.25,
                     // Build Data String in format &label=...&value=...
-                    strData = "&label=" + label + "&value=" +  $("#x").value('<%= @x %>');
+                    "<%= change_num %>"
+                    strData = "&label=" + label + "&value=" +  '<%= @x %>';
                 // Feed it to chart.
                 chartRef.feedData(strData);
             }
@@ -97,6 +88,5 @@ window.setInterval(function(){
 <p>FusionCharts Demo</p>
 <%= @chart.render() %>
 <div id="chart-container"></div>
-<div id="chart-container2"></div>
 </body>
 </html>
