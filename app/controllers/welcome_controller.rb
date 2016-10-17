@@ -11,7 +11,7 @@ class WelcomeController < ApplicationController
       	:height => 400,
       	:width => 600,
       	:type => 'line',
-      	:renderAt => 'chart-container',
+      	:renderAt => 'chart-container2',
 
   # Chart data is passed to the `dataSource` parameter, as hashes, in the form of
 
