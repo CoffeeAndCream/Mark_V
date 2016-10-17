@@ -6,76 +6,54 @@ class WelcomeController < ApplicationController
   # JSON and the chart will be rendered.
   def index
     page = Nokogiri::HTML(open("https://en.wikipedia.org/"))
-    @title = page.css('title').to_json
+    @title = page.css('title')
     # **Step 1:** Create the FusionCharts object in the controller action
-    	@chart = Fusioncharts::Chart.new({
-        	:height => 400,
-        	:width => 600,
-        	:id => 'chart',
-        	:type => 'column2d',
-        	:renderAt => 'chart-container',
-        	:dataSource => '{
-            	"chart": {
-                	"caption": "Monthly revenue for last year",
-                	"subCaption": ' + @title + ',
-                	"xAxisName": "Month",
-                	"yAxisName": "Revenues (In USD)",
-                	"numberPrefix": "$",
-                	"paletteColors": "#0075c2",
-                	"bgColor": "#ffffff",
-                	"borderAlpha": "20",
-                	"canvasBorderAlpha": "0",
-                	"usePlotGradientColor": "0",
-                	"plotBorderAlpha": "10",
-                	"placevaluesInside": "1",
-                	"rotatevalues": "1",
-                	"valueFontColor": "#ffffff",
-                	"showXAxisLine": "1",
-                	"xAxisLineColor": "#999999",
-                	"divlineColor": "#999999",
-                	"divLineDashed": "1",
-                	"showAlternateHGridColor": "0",
-                	"subcaptionFontBold": "0",
-                	"subcaptionFontSize": "14"
-            	},
-            	"data": [{
-                	"label": "Jan",
-                	"value": "420000"
-            	}, {
-                	"label": "Feb",
-                	"value": "810000"
-            	}, {
-                	"label": "Mar",
-                	"value": "720000"
-            	}, {
-                	"label": "Apr",
-                	"value": "550000"
-            	}, {
-                	"label": "May",
-                	"value": "910000"
-            	}, {
-                	"label": "Jun",
-                	"value": "510000"
-            	}, {
-                	"label": "Jul",
-                	"value": "680000"
-            	}, {
-                	"label": "Aug",
-                	"value": "620000"
-            	}, {
-                	"label": "Sep",
-                	"value": "610000"
-            	}, {
-                	"label": "Oct",
-                	"value": "490000"
-            	}, {
-                	"label": "Nov",
-                	"value": "900000"
-            	}, {
-                	"label": "Dec",
-                	"value": "730000"
-            	}]
-        	}'
-    	})
+    # Create the FusionCharts object in the controller action
+
+  	@chart = Fusioncharts::Chart.new({
+      	:height => 400,
+      	:width => 600,
+      	:type => 'column2d',
+      	:renderAt => 'chart-container',
+
+    # Chart data is passed to the `dataSource` parameter, as hashes, in the form of
+
+    # key-value pairs.
+
+    :dataSource => {
+      	:chart => {
+          	:caption => 'Comparison of Quarterly Revenue',
+          	:subCaption => @title,
+          	:xAxisname => 'Quarter',
+          	:yAxisName => 'Amount ($)',
+          	:numberPrefix => '$',
+          	:theme => 'fint',
+      	},
+
+    # The `category` hash is defined inside the `categories` array with four key-value pairs
+
+    # that represent the x-axis labels for the four quarters.
+
+      	:categories => [{
+          	:category => [
+              	{ :label => 'Q1' },
+              	{ :label => 'Q2' },
+              	{ :label => 'Q3' },
+              	{ :label => 'Q4' }
+          	]
+      	}],
+      	:dataset =>  [{
+          	:seriesname => 'Previous Year',
+
+    # The `data` hash contains four key-value pairs that are the values for the revenue
+
+    # generated in the previous year.
+
+        	:data =>  [
+            	{ :value => '10000' },
+            	{ :value => '11500' },
+            	{ :value => '12500' },
+            	{ :value => '15000' }
+        	]}
   end
 end
