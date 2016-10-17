@@ -29,6 +29,7 @@ class WelcomeController < ApplicationController
             	:yAxisName => 'Amount of Goods ($ millions)',
             	:numberPrefix => '$',
               :showValues => '0',
+              :labelStep => '2',
             	:theme => 'fint',
         	},
           :data => graph_arr
