@@ -5,8 +5,7 @@ class WelcomeController < ApplicationController
   def index
 
   end
-  def change_num
-    @x = rand(10... 50)
-    render json: @x
+  def show
+    
   end
 end
