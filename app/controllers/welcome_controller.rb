@@ -3,7 +3,12 @@ class WelcomeController < ApplicationController
 
   # JSON and the chart will be rendered.
   def index
-
+    Thread.new do
+      while true do
+        @x = rand(10... 50)
+        sleep 1
+      end
+    end
     @test = "Did you drink that coffee?"
   # Create the FusionCharts object in the controller action
 
