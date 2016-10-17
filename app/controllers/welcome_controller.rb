@@ -1,6 +1,12 @@
+require 'rubygems'
+require 'nokogiri'
+
 class WelcomeController < ApplicationController
   # The `fc_hash` function is defined to load data from a Ruby Hash. This data will be converted to
-
+  def webscrape
+    page = Nokogiri::HTML(open("https://en.wikipedia.org/"))
+    @title = page.css('title')
+  end
   # JSON and the chart will be rendered.
   def index
     # **Step 1:** Create the FusionCharts object in the controller action
@@ -13,7 +19,7 @@ class WelcomeController < ApplicationController
         	:dataSource => '{
             	"chart": {
                 	"caption": "Monthly revenue for last year",
-                	"subCaption": "Harry\'s SuperMart",
+                	"subCaption": '@title',
                 	"xAxisName": "Month",
                 	"yAxisName": "Revenues (In USD)",
                 	"numberPrefix": "$",
