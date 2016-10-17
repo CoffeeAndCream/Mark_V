@@ -7,5 +7,6 @@ class WelcomeController < ApplicationController
   end
   def change_num
     @x = rand(10... 50)
+    render json: @x
   end
 end
