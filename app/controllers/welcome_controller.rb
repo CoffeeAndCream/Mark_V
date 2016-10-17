@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
   # The `fc_hash` function is defined to load data from a Ruby Hash. This data will be converted to
   # JSON and the chart will be rendered.
   def index
-    page = Nokogiri::HTML(open("https://en.wikipedia.org/"))
+    page = Nokogiri::HTML(open("https://www.reddit.com/"))
     @title = page.css('title').text
     # **Step 1:** Create the FusionCharts object in the controller action
     # Create the FusionCharts object in the controller action
