@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
   def index
     @import_jp_data = create_hash('public/datasets/IMPJP.csv')
     @import_ch_data = create_hash('public/datasets/IMPCH.csv')
+    
     jp_arr = []
     ch_arr = []
 
@@ -43,6 +44,7 @@ class WelcomeController < ApplicationController
           :data => jp_arr
         }
       })
+
       @chchart = Fusioncharts::Chart.new({
       	:height => 600,
       	:width => 800,
