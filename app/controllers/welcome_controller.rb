@@ -19,7 +19,7 @@ class WelcomeController < ApplicationController
   :dataSource => {
     	:chart => {
         	:caption => @test,
-        	:subCaption => 'Harry\'s SuperMart',
+        	:subCaption => 'Coffee Index',
         	:xAxisname => 'Quarter',
         	:yAxisName => 'Amount ($)',
         	:numberPrefix => '$',
