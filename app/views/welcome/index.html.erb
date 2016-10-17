@@ -61,7 +61,7 @@
                     value = Math.floor(Math.random() * 50) / 100 + 35.25,
                     value2 = Math.floor(Math.random() * 50) / 100 + 35.25,
                     // Build Data String in format &label=...&value=...
-                    strData = "&label=" + label + "&value=" + value|value2;
+                    strData = "&label=" + label + "&value=" + value + "|" + value2;
                 // Feed it to chart.
                 chartRef.feedData(strData);
             }
