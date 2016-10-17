@@ -9,6 +9,7 @@ class WelcomeController < ApplicationController
 
     @import_data.each do |key, val|
       graph_arr.push({
+          :label => key,
           :value => val
         })
         end
@@ -27,6 +28,7 @@ class WelcomeController < ApplicationController
             	:xAxisname => 'Quarter',
             	:yAxisName => 'Amount ($)',
             	:numberPrefix => '$',
+              :showValues => 'false'
             	:theme => 'fint',
         	},
           :data => graph_arr
