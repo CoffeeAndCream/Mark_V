@@ -19,7 +19,7 @@ class WelcomeController < ApplicationController
         	:dataSource => '{
             	"chart": {
                 	"caption": "Monthly revenue for last year",
-                	"subCaption": '@title',
+                	"subCaption": ' + @title + ',
                 	"xAxisName": "Month",
                 	"yAxisName": "Revenues (In USD)",
                 	"numberPrefix": "$",
