@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   def index
 
   end
-  def show
+  def graph
 
   # **Step 1:** Create the FusionCharts object in the controller action
   	@chart = Fusioncharts::Chart.new({
