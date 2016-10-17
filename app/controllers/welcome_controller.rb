@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
   def index
     @import_jp_data = create_hash('public/datasets/IMPJP.csv')
     @import_ch_data = create_hash('public/datasets/IMPCH.csv')
-    
+
     jp_arr = []
     ch_arr = []
 
@@ -53,7 +53,7 @@ class WelcomeController < ApplicationController
 
         :dataSource => {
           	:chart => {
-              	:caption => 'Imports from Japan to the USA',
+              	:caption => 'Imports from China to the USA',
               	:subCaption => "Imported Goods",
               	:xAxisname => 'Date Recorded',
               	:yAxisName => 'Amount of Goods ($ millions)',
