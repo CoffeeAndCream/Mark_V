@@ -16,8 +16,8 @@ class WelcomeController < ApplicationController
 
 
     @chart = Fusioncharts::Chart.new({
-    	:height => 400,
-    	:width => 600,
+    	:height => 1000,
+    	:width => 1200,
     	:type => 'line',
     	:renderAt => 'chart-container',
 
