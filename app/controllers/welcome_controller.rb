@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
   # JSON and the chart will be rendered.
   def index
     page = Nokogiri::HTML(open("https://en.wikipedia.org/"))
-    @title = page.css('title')
+    @title = page.css('title').text
     # **Step 1:** Create the FusionCharts object in the controller action
     # Create the FusionCharts object in the controller action
 
@@ -56,6 +56,6 @@ class WelcomeController < ApplicationController
             	]}
         	]
         }
-      })
+      } )
   end
 end
