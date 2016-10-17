@@ -36,7 +36,7 @@ class WelcomeController < ApplicationController
               	"subcaptionFontSize": "14"
           	},
           	"data": [{
-              	"label": "#{@temp}",
+              	"label": <%= @temp.to_json %>,
               	"value": "420000"
           	}, {
               	"label": "Feb",
