@@ -25,8 +25,8 @@ class WelcomeController < ApplicationController
 
 
     @jpchart = Fusioncharts::Chart.new({
-    	:height => 600,
-    	:width => 800,
+    	:height => 400,
+    	:width => 600,
     	:type => 'line',
     	:renderAt => 'jpchart-container',
 

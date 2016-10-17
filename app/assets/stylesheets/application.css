@@ -14,7 +14,7 @@
  *= require_self
  */
  body {
-     background-color: #444;
+     background-color: #FFFFFF;
      margin: 0;
  }
  #wrapper {
@@ -28,10 +28,10 @@
      color: white;
  }
  #leftcolumn {
-      width: 250px;
+      width: 600px;
       background-color: #111;
  }
  #rightcolumn {
-      width: 750px;
+      width: 600px;
       background-color: #777;
  }
