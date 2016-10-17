@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'Nokogiri'
+require 'nokogiri'
 
 class WelcomeController < ApplicationController
   # The `fc_hash` function is defined to load data from a Ruby Hash. This data will be converted to
