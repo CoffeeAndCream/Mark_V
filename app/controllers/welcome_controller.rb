@@ -39,24 +39,13 @@ class WelcomeController < ApplicationController
         	]
     	}],
     	:dataset =>  [{
-        	:seriesname => 'Previous Year',
-
   # The `data` hash contains four key-value pairs that are the values for the revenue
-
   # generated in the previous year.
-
         	:data =>  [
             	{ :value => '10000' },
             	{ :value => '11500' },
             	{ :value => '12500' },
             	{ :value => '15000' }
-        	]},{
-        	:seriesname => 'Current Year',
-        	:data =>  [
-            	{ :value => '25400' },
-            	{ :value => '29800' },
-            	{ :value => '21800' },
-            	{ :value => '26800' }
         	]}
     	]
     }
