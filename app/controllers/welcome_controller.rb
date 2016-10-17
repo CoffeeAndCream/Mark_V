@@ -3,8 +3,6 @@ class WelcomeController < ApplicationController
 
   # JSON and the chart will be rendered.
   def index
-    def graph
-
     # **Step 1:** Create the FusionCharts object in the controller action
     	@chart = Fusioncharts::Chart.new({
         	:height => 400,
@@ -75,6 +73,5 @@ class WelcomeController < ApplicationController
             	}]
         	}'
     	})
-    end
   end
 end
