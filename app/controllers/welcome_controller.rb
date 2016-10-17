@@ -28,7 +28,7 @@ class WelcomeController < ApplicationController
             	:xAxisname => 'Quarter',
             	:yAxisName => 'Amount ($)',
             	:numberPrefix => '$',
-              :showLabels => '0',
+              :showValues => '0',
             	:theme => 'fint',
         	},
           :data => graph_arr
