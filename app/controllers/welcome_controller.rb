@@ -42,8 +42,9 @@ class WelcomeController < ApplicationController
     values = []
     CSV.foreach(filepath, { :col_sep => ',' }) { |key|
         fake_hash.push(key)
-        dates.push(fake_hash.last[0])
-        values.push(fake_hash.last[1])
+        if(fake_hash.last[0] != "DATE")
+          dates.push(fake_hash.last[0])
+          values.push(fake_hash.last[1])
     }
     Hash[dates.zip(values)]
   end
