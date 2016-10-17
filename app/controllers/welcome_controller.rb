@@ -9,7 +9,6 @@ class WelcomeController < ApplicationController
 
     @import_data.each do |key, val|
       graph_arr.push({
-          :label => key,
           :value => val
         })
         end
