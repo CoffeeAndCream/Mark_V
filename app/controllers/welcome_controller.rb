@@ -3,7 +3,7 @@ class WelcomeController < ApplicationController
 
   # JSON and the chart will be rendered.
   def index
-
+    @test = "test"
   # Create the FusionCharts object in the controller action
 
   	@chart = Fusioncharts::Chart.new({
@@ -18,7 +18,7 @@ class WelcomeController < ApplicationController
 
   :dataSource => {
     	:chart => {
-        	:caption => 'Comparison of Quarterly Revenue',
+        	:caption => @test,
         	:subCaption => 'Harry\'s SuperMart',
         	:xAxisname => 'Quarter',
         	:yAxisName => 'Amount ($)',
