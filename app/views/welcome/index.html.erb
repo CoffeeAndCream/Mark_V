@@ -6,7 +6,6 @@
 <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/fusioncharts.js"></script>
 <script type="text/javascript" src="http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js?cacheBust=56"></script>
 <script type="text/javascript">
-  var x = '<%= @x %>'
   FusionCharts.ready(function(){
     var fusioncharts = new FusionCharts({
     id: "stockRealTimeChart",
@@ -18,7 +17,7 @@
     dataSource: {
         "chart": {
             "caption": "Real-time stock price monitor",
-            "subCaption": x,
+            "subCaption": "Harry's SuperMart",
             "xAxisName": "Time",
             "yAxisName": "Stock Price",
             "numberPrefix": "$",
@@ -61,7 +60,7 @@
                     // Get random number between 35.25 & 35.75 - rounded to 2 decimal places
                     randomValue = Math.floor(Math.random() * 50) / 100 + 35.25,
                     // Build Data String in format &label=...&value=...
-                    strData = "&label=" + label + "&value=" + randomValue;
+                    strData = "&label=" + label + "&value=" + '<%= @x %>';
                 // Feed it to chart.
                 chartRef.feedData(strData);
             }

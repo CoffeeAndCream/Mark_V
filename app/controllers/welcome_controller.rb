@@ -3,9 +3,8 @@ class WelcomeController < ApplicationController
 
   # JSON and the chart will be rendered.
   def index
-    def output
-      @x = rand(10...10000)
-    end
+    @x = rand(10...10000)
+
     @test = "Did you drink that coffee?"
   # Create the FusionCharts object in the controller action
 
