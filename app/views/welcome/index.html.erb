@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 <html>
+
 <head>
+<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+<script type='text/javascript' src="public/javascripts/animation.js"></script>
 </head>
+
 <body>
-<img src="/images/coffee-animated-gif-5.gif" alt="Coffee Cup" width="180" height="194" align="left">
-</br>
-</br>
-<p style="font-size:36px">The Coffee and Cream of Data Analysis</p>
-<p style="font-size:14px">Still under construction. In the mean time, enjoy this cup of coffee</p>
-</br>
-</br>
-</br>
+<div id="header">
+  <img src="/images/coffee-animated-gif-5.gif" alt="Coffee Cup" width="180" height="194" align="left">
+  <p style="font-size:40px">The Coffee and Cream of Data Analysis</p>
+  <p style="font-size:14px">Still under construction. In the mean time, enjoy this cup of coffee.</p>
+</div>
 </br>
 <%= @jpchart.render() %>
-  <div id="wrapper">
+<div id="wrapper">
+  <div class="hideme">
+    <p style="font-size:20px">Simple Data Analysis over Time Series</p>
     <div id="leftcolumn">
       <div id="jpchart-container"></div>
     </div>
@@ -23,5 +25,9 @@
         <div id="chchart-container"></div>
     </div>
   </div>
+</div>
+<div id="page-break">
+  <img src="/images/small-page-break.png" alt="Page Break" align="center">
+</div>
 </body>
 </html>

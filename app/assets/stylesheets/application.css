@@ -17,6 +17,11 @@
      background-color: #FFFFFF;
      margin: 0;
  }
+
+#header {
+  height: 215px;
+}
+
  #wrapper {
      width: 1280px;
      margin: 0 auto;
@@ -34,4 +39,25 @@
  #rightcolumn {
       width: 600px;
       background-color: #FFFFFF;
+ }
+
+ #container
+ {
+     height:2000px;
+ }
+
+ #container DIV
+ {
+     margin:50px;
+     padding:50px;
+     background-color:lightgreen;
+ }
+ #page-break {
+   margin: 0 auto;
+   text-align: center;
+   padding-top: 15px;
+ }
+ .hideme
+ {
+     opacity:0;
  }

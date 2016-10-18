@@ -32,13 +32,15 @@ class WelcomeController < ApplicationController
 
       :dataSource => {
         	:chart => {
+              :animationDuration => '3',
             	:caption => 'Imports from Japan to the USA',
             	:subCaption => "Imported Goods",
             	:xAxisname => 'Date Recorded',
             	:yAxisName => 'Amount of Goods ($ millions)',
             	:numberPrefix => '$',
               :showValues => '0',
-              :labelStep => '3',
+              :labelStep => 5,
+              :slantLabels => '1',
             	:theme => 'fint',
         	},
           :data => jp_arr
@@ -53,13 +55,15 @@ class WelcomeController < ApplicationController
 
         :dataSource => {
           	:chart => {
+                :animationDuration => '3',
               	:caption => 'Imports from China to the USA',
               	:subCaption => "Imported Goods",
               	:xAxisname => 'Date Recorded',
               	:yAxisName => 'Amount of Goods ($ millions)',
               	:numberPrefix => '$',
                 :showValues => '0',
-                :labelStep => '3',
+                :labelStep => 5,
+                :slantLabels => '1',
               	:theme => 'carbon',
           	},
             :data => ch_arr
