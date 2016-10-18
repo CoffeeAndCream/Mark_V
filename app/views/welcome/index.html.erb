@@ -15,15 +15,13 @@
 </br>
 <%= @jpchart.render() %>
 <div id="wrapper">
-  <div class="hideme">
-    <p style="font-size:20px">Simple Data Analysis over Time Series</p>
-    <div id="leftcolumn">
-      <div id="jpchart-container"></div>
-    </div>
-    <%= @chchart.render() %>
-    <div id="rightcolumn">
-        <div id="chchart-container"></div>
-    </div>
+  <p style="font-size:20px">Simple Data Analysis over Time Series</p>
+  <div id="leftcolumn">
+    <div id="jpchart-container"></div>
+  </div>
+  <%= @chchart.render() %>
+  <div id="rightcolumn">
+      <div id="chchart-container"></div>
   </div>
 </div>
 <div id="page-break">
