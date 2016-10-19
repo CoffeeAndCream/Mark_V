@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#index'
   get '/home' => 'welcome#index'
-  match '/contact',     to: 'contacts#new',             via: 'get'
-  resources "contacts", only: [:new, :create]
+  match '/user',     to: 'users#new',             via: 'get'
+  resources "users", only: [:new, :create]
 end
