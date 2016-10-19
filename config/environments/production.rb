@@ -83,4 +83,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  :port           => ENV['smtp.mailgun.org'],
+  :address        => ENV['209.61.151.224'],
+  :user_name      => ENV['postmaster@mg.coffee-and-cream.com'],
+  :password       => ENV['2254dcf122fcabfe9c8c1d8474eea3cb'],
+  :domain         => 'coffee-and-cream.heroku.com',
+  :authentication => :plain,
+}
 end
