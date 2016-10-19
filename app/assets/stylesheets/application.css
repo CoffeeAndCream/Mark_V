@@ -70,3 +70,7 @@ span {
  .hideme {
      opacity:0;
  }
+
+ .center-me {
+   margin: 0 auto;
+ }
