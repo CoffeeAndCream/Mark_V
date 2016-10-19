@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ /*
  body {
      background-color: #FFFFFF;
      margin: 0;
@@ -65,25 +66,6 @@
     font-size: 1.4em;
   }
 
-  /* Option 1 - Display Inline */
-  .nav li {
-    display: inline-block;
-    margin-right: -4px;
-  }
-
-  /* Options 2 - Float
-  .nav li {
-    float: left;
-  }
-  .nav ul {
-    overflow: auto;
-    width: 600px;
-    margin: 0 auto;
-  }
-  .nav {
-    background-color: #444;
-  }
-  */
 }
 
 span {
@@ -142,11 +124,17 @@ span {
      opacity:0;
  }
 
- .center-me {
+ .center-webkit {
    margin: 0 auto;
    display: -webkit-box;
    -webkit-box-align: center;
    padding-top: 5px;
+ }
+
+ center-field{
+   margin-left: 50%;
+   text-align: -webkit-center;
+   margin-right: 50%;
  }
 
  #moz-reflect:after {
@@ -158,3 +146,4 @@ span {
   margin-bottom: 100px;
   -moz-transform: scaleY(-1);
 }
+*/

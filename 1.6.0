@@ -1,0 +1,6 @@
+Nokogiri is built with the packaged libraries: libxml2-2.9.4, libxslt-1.1.29, zlib-1.2.8, libiconv-1.14.
+Successfully installed nokogiri-1.6.8.1-x64-mingw32
+Parsing documentation for nokogiri-1.6.8.1-x64-mingw32
+Installing ri documentation for nokogiri-1.6.8.1-x64-mingw32
+Done installing documentation for nokogiri after 6 seconds
+1 gem installed

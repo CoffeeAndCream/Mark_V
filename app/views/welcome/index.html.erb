@@ -2,47 +2,109 @@
 <html>
 
 <head>
-<%= javascript_include_tag "https://www.google.com/jsapi" %>
-<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-<%= javascript_include_tag "/javascripts/animation.js" %>
+  <%= javascript_include_tag "https://www.google.com/jsapi" %>
+  <%= javascript_include_tag "/javascripts/animation.js" %>
+  <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+  <%= stylesheet_link_tag "w3.css" %>
 </head>
-<header>
-  <div class="nav">
-    <ul>
-      <li class="home"><a href="#">Home</a></li>
-      <li class="about"><a href="about">About</a></li>
-      <li class="news"><a href="newsletter">Newsletter</a></li>
-      <li class="contact"><a href="user">Contact</a></li>
+<!-- Navbar -->
+<div class="w3-top">
+  <ul class="w3-navbar w3-orange w3-card-2 w3-left-align w3-large">
+    <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
+      <a class="w3-padding-large w3-hover-orange w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    </li>
+    <li><a href="#" class="w3-padding-large w3-white">Cafe</a></li>
+    <li class="w3-hide-small"><a href="home" class="w3-padding-large w3-hover-blue">Home</a></li>
+   <li class="w3-hide-small"><a href="about" class="w3-padding-large w3-hover-blue">About</a></li>
+    <li class="w3-hide-small"><a href="contact" class="w3-padding-large w3-hover-blue">Contact</a></li>
+    <li class="w3-hide-small"><a href="login" class="w3-padding-large w3-hover-blue">Login</a></li>
+  </ul>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-hide w3-hide-large w3-hide-medium">
+    <ul class="w3-navbar w3-left-align w3-large w3-black">
+      <li><a class="w3-padding-large" href="home">Home</a></li>
+      <li><a class="w3-padding-large" href="about">About</a></li>
+      <li><a class="w3-padding-large" href="contact">Contact</a></li>
+      <li><a class="w3-padding-large" href="login">Login</a></li>
     </ul>
   </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-orange w3-center w3-padding-128">
+  <h1 class="w3-margin w3-jumbo">The Coffee and Cream of Data Analysis</h1>
+  <p style="font-size:10px">Still under construction. In the mean time, enjoy a cup of coffee.</p>
 </header>
-<body>
-  <div id="spacer">
-    <img src="/images/coffee-animated-gif-5.gif" alt="Coffee Cup" width="180" height="194" align="left">
-    <span>
-      <p style="font-size:40px">The Coffee and Cream of Data Analysis</p>
-    </span>
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Two Graphs</h1>
+      <h5 class="w3-padding-32">Simple Data Analysis over Time Series.</h5>
+
+      <p class="w3-text-grey">This is a comparison of Japanese imports to the USA (on the left) and Chinese imports to the USA (on the right). Clearly, since 1985, Japan has had a steady impact on our economy,
+      but without any growth. Where China has been less stable, but much more consistent in growth.</p>
+    </div>
+    <div class="w3-third w3-center">
+      <img src="/images/coffee-animated-gif-5.gif" alt="Coffee Cup" width="180" height="194" align="left">
+    </div>
   </div>
-    <p style="font-size:10px">Still under construction. In the mean time, enjoy this cup of coffee.</p>
-  <div class="center-me">
-    <p>Welcome to my website. It's probably just going to function as a testing center for any of my on-going projects. I'll be using this
-      to keep my web management skills sharp, but I'll also be providing some pretty neat examples. The goals and intentions of the
-      website will grow and change over time.</p>
-    </br>
+  <div id="leftcolumn">
+    <p>Imports ($) from Japan to the USA</p>
+    <%= line_chart @import_jp_data, max: 50000, colors: ["gray"], xtitle: "Time", ytitle: "$ (millions)", width: "800px" %>
+    </div>
+  <div id="rightcolumn">
+    <p>Imports ($) from China to the USA</p>
+    <%= line_chart @import_ch_data, xtitle: "Time", ytitle: "$ (millions)", width: "800px" %>
   </div>
-  <div id="wrapper">
-      <div id="sub-span">
-        <p style="font-size:20px">Simple Data Analysis over Time Series</p>
-      </div>
-      <div id="leftcolumn">
-        <p>Imports ($) from Japan to the USA</p>
-        <%= line_chart @import_jp_data, max: 50000, colors: ["gray"], xtitle: "Time", ytitle: "$ (millions)", width: "800px" %>
-      </div>
-      <div id="rightcolumn">
-        <p>Imports ($) from China to the USA</p>
-        <%= line_chart @import_ch_data, xtitle: "Time", ytitle: "$ (millions)", width: "800px" %>
-      </div>
-      </br>
+</div>
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-third w3-center">
+      <%= pie_chart @world_medals %>
+    </div>
+
+    <div class="w3-twothird">
+      <h1>Lorem Ipsum</h1>
+      <h5 class="w3-padding-32">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h5>
+
+      <p class="w3-text-grey">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">
+  <div class="w3-xlarge w3-padding-32">
+   <a href="#" class="w3-hover-text-indigo"><i class="fa fa-facebook-official"></i></a>
+   <a href="#" class="w3-hover-text-red"><i class="fa fa-pinterest-p"></i></a>
+   <a href="#" class="w3-hover-text-light-blue"><i class="fa fa-twitter"></i></a>
+   <a href="#" class="w3-hover-text-grey"><i class="fa fa-flickr"></i></a>
+   <a href="#" class="w3-hover-text-indigo"><i class="fa fa-linkedin"></i></a>
+ </div>
+ <p>Powered by <a href="http://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+<!--
       <div class="hideme">
         <div id="sub-span">
           <p style="font-size:20px">Pie Chart of Olympic Medals by Country</p>
@@ -59,5 +121,5 @@
       </div>
     </div>
   </div>
-</body>
+-->
 </html>
