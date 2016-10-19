@@ -33,7 +33,7 @@
 <div id="spacer">
   <h1 class="w3-margin w3-jumbo">Signup</h1>
 
-    <%= form_for :user, html: { class: 'w3-container' }, url: '/users' do |f| %>
+    <%= form_for :user, html: { class: 'w3-container' }, url: '/signup' do |f| %>
       <%= f.text_field :name, class: "w3-input", type: "text", :required => true %>
       <%= f.label :name, 'username', class: "w3-label w3-validate" %>
 
