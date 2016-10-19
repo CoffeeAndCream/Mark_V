@@ -18,6 +18,9 @@
      margin: 0;
  }
 
+#spacer{
+  padding-top:25px;
+}
 span {
   background: #c55509;
   display: -webkit-inline-box;
@@ -77,7 +80,7 @@ span {
    margin: 0 auto;
    display: -webkit-box;
    -webkit-box-align: center;
-   padding-top: 25px;
+   padding-top: 5px;
  }
 
  #moz-reflect:after {
