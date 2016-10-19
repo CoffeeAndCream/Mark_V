@@ -26,8 +26,7 @@ span {
   opacity: 0.85;
   color: white;
   text-align: center;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 25px;
 }
 
 #sub-span {
