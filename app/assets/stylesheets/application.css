@@ -54,7 +54,8 @@ span {
      border: 1px solid white;
      float: left;
      margin: 0 auto;
-     color: #FFFFFF;
+     color: #000000;
+     text-align: center;
  }
  #leftcolumn {
       width: 800px;
