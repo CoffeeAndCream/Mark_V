@@ -30,20 +30,21 @@
     </ul>
   </div>
 </div>
-
 <div id="spacer">
-  <div id="sub-span">
-    <p style="font-size: 24px">Sign-Up!</p>
-  </div>
+  <h1 class="w3-margin w3-jumbo">Signup</h1>
+
+    <%= form_for :user, html: { class: 'w3-container' }, url: '/users' do |f| %>
+      <%= f.text_field :name, class: "w3-input", type: "text", :required => true %>
+      <%= f.label :name, 'username', class: "w3-label w3-validate" %>
+
+      <%= f.text_field :email, class: "w3-input", type: "email", :required => true %>
+      <%= f.label :email, 'email', class: "w3-label w3-validate" %>
+
+      <%= f.text_field :password, class: "w3-input", type: "password", :required => true %>
+      <%= f.label :password, 'password', class: "w3-label w3-validate" %>
+
+      <%= f.text_field :password_confirmation, class: "w3-input", type: "password", :required => true %>
+      <%= f.label :password_confirmation, 'confirm password', class: "w3-label w3-validate" %>
+    <%= f.submit "Submit" %>
+    <% end %>
 </div>
-  <center-field>
-    <div class="Sign_Form">
-      <%= form_for :user, url: '/users' do |f| %>
-        <p>Name: <%= f.text_field :name %></p>
-        <p>Email: <%= f.text_field :email %></p>
-        <p>Password: <%= f.password_field :password %></p>
-        <p>Password Confirmation: <%= f.password_field :password_confirmation %></p> </br></br>
-        <%= f.submit "Submit" %>
-    </div>
-  </center-field>
-<% end %>

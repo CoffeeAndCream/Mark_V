@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/home' => 'welcome#index'
   get '/login' => 'users#new'
-  post '/users' => 'users#create'
+  post '/signup' => 'users#create'
 end

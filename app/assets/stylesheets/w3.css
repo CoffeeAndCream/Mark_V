@@ -1,4 +1,4 @@
-﻿/* W3.CSS 2.8 by Jan Egil and Borge Refsnes */
+/* W3.CSS 2.8 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
@@ -111,6 +111,11 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-responsive{overflow-x:auto}
 .w3-container:after,.w3-panel:after,.w3-row:after,.w3-row-padding:after,.w3-topnav:after,.w3-clear:after,.w3-btn-group:before,.w3-btn-group:after,.w3-btn-bar:before,.w3-btn-bar:after
 {content:"";display:table;clear:both}
+#wrapper {
+     width: 1650px;
+     padding-top: 25px;
+     margin: 0 auto;
+ }
 #leftcolumn, #rightcolumn {
     padding-top: 15px;
     border: 1px solid white;
@@ -127,6 +132,10 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
      width: 800px;
      background-color: #FFFFFF;
 }
+#spacer{
+  padding-top:50px;
+}
+
 .w3-col,.w3-half,.w3-third,.w3-twothird,.w3-threequarter,.w3-quarter{float:left;width:100%}
 .w3-col.s1{width:8.33333%}
 .w3-col.s2{width:16.66666%}
