@@ -24,10 +24,11 @@
 
 .nav ul {
   list-style: none;
-  background-color: #444;
+  background-color: #c55509;
   text-align: center;
   padding: 0;
   margin: 0;
+  opacity: 0.85;
 }
 .nav li {
   font-family: 'Oswald', sans-serif;
@@ -45,12 +46,13 @@
 }
 
 .nav a:hover {
-  background-color: #005f5f;
+  background-color: #008abd;
+  opacity: 0.85;
 }
 
 .nav a.active {
   background-color: #fff;
-  color: #444;
+  color: #c55509;
   cursor: default;
 }
 
