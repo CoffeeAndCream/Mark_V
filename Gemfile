@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'fusioncharts-rails'
-gem 'mailgun'
+gem 'bcrypt-ruby', :require => 'bcrypt' 
 gem 'chartkick'
 gem 'mail_form'
 gem 'simple_form'

@@ -7,9 +7,9 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: test
+  database: users
   pool: 5
-  username: admin
-  password: admin
-  port: 5433
+  username: postgres
+  password: 551133
+  port: 5432
   host: localhost
