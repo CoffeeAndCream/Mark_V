@@ -20,23 +20,33 @@
 
 span {
   background: #c55509;
-  display: inline-block;
   border-radius: 15px 50px;
   opacity: 0.85;
   color: white;
   text-align: center;
+  padding-left: 25px;
 }
 
 #sub-span {
-  display: -webkit-box;
-  background: #008abd;
-  border-radius: 15px 15px 15px 15px;
-  opacity: 0.65;
+  background: #c55509;
+  display: -webkit-inline-box;
+  -webkit-box-align: center;
+  border-radius: 15px 50px;
+  opacity: 0.85;
   color: white;
-  text-align: -webkit-center;
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#moz-reflect:after {
+  content: "";
+  display: block;
+  background: -moz-element(#moz-reflect) no-repeat;
+  width: auto;
+  height: 375px;
+  margin-bottom: 100px;
+  -moz-transform: scaleY(-1);
 }
 
 #wrapper {
@@ -73,4 +83,6 @@ span {
 
  .center-me {
    margin: 0 auto;
+   display: -webkit-box;
+   -webkit-box-align: center;
  }
