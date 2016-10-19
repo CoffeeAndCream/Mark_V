@@ -26,9 +26,11 @@
         <p style="font-size:20px">Simple Data Analysis over Time Series</p>
       </div>
       <div id="leftcolumn">
+        <p>Imports ($) from Japan to the USA</p>
         <%= line_chart @import_jp_data, max: 50000, colors: ["gray"], xtitle: "Time", ytitle: "$ (millions)", width: "800px" %>
       </div>
       <div id="rightcolumn">
+        <p>Imports ($) from China to the USA</p>
         <%= line_chart @import_ch_data, xtitle: "Time", ytitle: "$ (millions)", width: "800px" %>
       </div>
       </br>
