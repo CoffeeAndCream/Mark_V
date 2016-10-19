@@ -15,5 +15,7 @@
 //= require fusioncharts/fusioncharts
 //= require fusioncharts/fusioncharts.charts
 //= require fusioncharts/themes/fusioncharts.theme.fint
+//= require Chart.bundle
+//= require chartkick
 //= require turbolinks
 //= require_tree .

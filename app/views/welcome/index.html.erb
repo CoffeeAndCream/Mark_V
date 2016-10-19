@@ -2,30 +2,47 @@
 <html>
 
 <head>
+<%= javascript_include_tag "https://www.google.com/jsapi" %>
 <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
-<script type='text/javascript' src="public/javascripts/animation.js"></script>
+<%= javascript_include_tag "/javascripts/animation.js" %>
 </head>
 
 <body>
-<div id="header">
   <img src="/images/coffee-animated-gif-5.gif" alt="Coffee Cup" width="180" height="194" align="left">
-  <p style="font-size:40px">The Coffee and Cream of Data Analysis</p>
-  <p style="font-size:14px">Still under construction. In the mean time, enjoy this cup of coffee.</p>
-</div>
-</br>
-<%= @jpchart.render() %>
-<div id="wrapper">
-  <p style="font-size:20px">Simple Data Analysis over Time Series</p>
-  <div id="leftcolumn">
-    <div id="jpchart-container"></div>
+  <div id="wrapper">
+      <span>
+        <p style="font-size:40px">The Coffee and Cream of Data Analysis</p>
+      </span>
+      <p style="font-size:12px">Still under construction. In the mean time, enjoy this cup of coffee.</p>
+      <p>Welcome to my website. It's probably just going to function as a testing center for any of my on-going projects. I'll be using this
+      </br>to keep my web management skills sharp, but I'll also be providing some pretty neat examples. The goals and intentions of the
+      </br>website will grow and change over time.</p>
+    </br>
+      <div id="sub-span">
+        <p style="font-size:20px">Simple Data Analysis over Time Series</p>
+      </div>
+      <div id="leftcolumn">
+        <%= line_chart @import_jp_data, max: 50000, colors: ["gray"], xtitle: "Time", ytitle: "$ (millions)", width: "800px" %>
+      </div>
+      <div id="rightcolumn">
+        <%= line_chart @import_ch_data, xtitle: "Time", ytitle: "$ (millions)", width: "800px" %>
+      </div>
+      </br>
+      <div class="hideme">
+        <div id="sub-span">
+          <p style="font-size:20px">Pie Chart of Olympic Medals by Country</p>
+        </div>
+        </br>
+      </div>
+      <div class="hideme">
+        <%= pie_chart @world_medals %>
+      </div>
+      <div class="hideme">
+        <div id="page-break">
+          <img src="/images/small-page-break.png" alt="Page Break" align="center">
+        </div>
+      </div>
+    </div>
   </div>
-  <%= @chchart.render() %>
-  <div id="rightcolumn">
-      <div id="chchart-container"></div>
-  </div>
-</div>
-<div id="page-break">
-  <img src="/images/small-page-break.png" alt="Page Break" align="center" width= "1200px">
-</div>
 </body>
 </html>

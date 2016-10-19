@@ -4,71 +4,15 @@ class WelcomeController < ApplicationController
   # The `fc_hash` function is defined to load data from a Ruby Hash. This data will be converted to
   # JSON and the chart will be rendered.
   def index
-    @import_jp_data = create_hash('public/datasets/IMPJP.csv')
-    @import_ch_data = create_hash('public/datasets/IMPCH.csv')
+    @import_jp_data = reduce_data(create_hash('public/datasets/IMPJP.csv'))
+    @import_ch_data = reduce_data(create_hash('public/datasets/IMPCH.csv'))
 
-    jp_arr = []
-    ch_arr = []
-
-    @import_jp_data.each do |key, val|
-      jp_arr.push({
-          :label => key,
-          :value => val
-        })
-        end
-    @import_ch_data.each do |key, val|
-      ch_arr.push({
-          :label => key,
-          :value => val
-        })
-        end
-
-
-    @jpchart = Fusioncharts::Chart.new({
-    	:height => 400,
-    	:width => 600,
-    	:type => 'line',
-    	:renderAt => 'jpchart-container',
-
-      :dataSource => {
-        	:chart => {
-              :animationDuration => '3',
-            	:caption => 'Imports from Japan to the USA',
-            	:subCaption => "Imported Goods",
-            	:xAxisname => 'Date Recorded',
-            	:yAxisName => 'Amount of Goods ($ millions)',
-            	:numberPrefix => '$',
-              :showValues => '0',
-              :labelStep => 5,
-              :slantLabels => '1',
-            	:theme => 'fint',
-        	},
-          :data => jp_arr
-        }
-      })
-
-      @chchart = Fusioncharts::Chart.new({
-        :height => 400,
-      	:width => 600,
-      	:type => 'line',
-      	:renderAt => 'chchart-container',
-
-        :dataSource => {
-          	:chart => {
-                :animationDuration => '3',
-              	:caption => 'Imports from China to the USA',
-              	:subCaption => "Imported Goods",
-              	:xAxisname => 'Date Recorded',
-              	:yAxisName => 'Amount of Goods ($ millions)',
-              	:numberPrefix => '$',
-                :showValues => '0',
-                :labelStep => 5,
-                :slantLabels => '1',
-              	:theme => 'carbon',
-          	},
-            :data => ch_arr
-          }
-        })
+    @world_medals = {"USA" => 40,
+                    "Mexico" => 5,
+                    "Japan" => 10,
+                    "China" => 15,
+                    "Russia" => 10,
+                    "Germany" => 12}
   end
 
   def create_hash(filepath)
@@ -82,4 +26,15 @@ class WelcomeController < ApplicationController
     }
     Hash[dates.zip(values)]
   end
+
+  def reduce_data(hash_) #Splits data in half for legibility
+    counter = 0
+    hash_.each {|key, value|
+      if(counter%2 == 0)
+        hash_.delete(key)
+      end
+      counter += 1
+    }
+  end
+
 end
