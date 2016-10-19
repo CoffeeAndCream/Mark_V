@@ -16,11 +16,10 @@ gem 'coffee-rails', '~> 4.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'fusioncharts-rails'
-
 gem 'chartkick'
-
+gem 'mail_form'
+gem 'simple_form'
 gem 'json'
-
 gem 'httparty'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
