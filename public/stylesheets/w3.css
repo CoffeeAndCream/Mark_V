@@ -1,4 +1,4 @@
-﻿/* W3.CSS 2.8 by Jan Egil and Borge Refsnes */
+/* W3.CSS 2.8 by Jan Egil and Borge Refsnes */
 html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
 html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}
@@ -27,10 +27,10 @@ legend{color:inherit;display:table;max-width:100%;padding:0;white-space:normal}t
 ::-webkit-input-placeholder{color:inherit;opacity:0.54}
 ::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 /* End extract */
-html,body{font-family:Verdana,sans-serif;font-size:15px;line-height:1.5}html{overflow-x:hidden}
-h1,h2,h3,h4,h5,h6,.w3-slim,.w3-wide{font-family:"Segoe UI",Arial,sans-serif}
+html,body{font-family:"Space Mono";font-size:15px;line-height:1.5}html{overflow-x:hidden}
+h1,h2,h3,h4,h5,h6,.w3-slim,.w3-wide{font-family:"Space Mono",sans-serif}
 h1{font-size:36px}h2{font-size:30px}h3{font-size:24px}h4{font-size:20px}h5{font-size:18px}h6{font-size:16px}
-.w3-serif{font-family:"Times New Roman",Times,serif}
+.w3-serif{font-family:"Space Mono";}
 h1,h2,h3,h4,h5,h6{font-weight:400;margin:10px 0}.w3-wide{letter-spacing:4px}
 h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:inherit}
 hr{border:0;border-top:1px solid #eee;margin:20px 0}
@@ -111,6 +111,22 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-responsive{overflow-x:auto}
 .w3-container:after,.w3-panel:after,.w3-row:after,.w3-row-padding:after,.w3-topnav:after,.w3-clear:after,.w3-btn-group:before,.w3-btn-group:after,.w3-btn-bar:before,.w3-btn-bar:after
 {content:"";display:table;clear:both}
+#leftcolumn, #rightcolumn {
+    padding-top: 15px;
+    border: 1px solid white;
+    float: left;
+    margin: 0 auto;
+    color: #000000;
+    text-align: center;
+}
+#leftcolumn {
+     width: 800px;
+     background-color: #FFFFFF;
+}
+#rightcolumn {
+     width: 800px;
+     background-color: #FFFFFF;
+}
 .w3-col,.w3-half,.w3-third,.w3-twothird,.w3-threequarter,.w3-quarter{float:left;width:100%}
 .w3-col.s1{width:8.33333%}
 .w3-col.s2{width:16.66666%}
@@ -265,7 +281,7 @@ input[type=checkbox].w3-check:disabled+.w3-validate,input[type=radio].w3-radio:d
 .w3-indigo,.w3-hover-indigo:hover{color:#fff!important;background-color:#3f51b5!important}
 .w3-khaki,.w3-hover-khaki:hover{color:#000!important;background-color:#f0e68c!important}
 .w3-lime,.w3-hover-lime:hover{color:#000!important;background-color:#cddc39!important}
-.w3-orange,.w3-hover-orange:hover{color:#000!important;background-color:#ff9800!important}
+.w3-orange,.w3-hover-orange:hover{color:#fff!important;background-color:#c55509!important}
 .w3-deep-orange,.w3-hover-deep-orange:hover{color:#fff!important;background-color:#ff5722!important}
 .w3-pink,.w3-hover-pink:hover{color:#fff!important;background-color:#e91e63!important}
 .w3-purple,.w3-hover-purple:hover{color:#fff!important;background-color:#9c27b0!important}
