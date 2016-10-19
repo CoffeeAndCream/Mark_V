@@ -14,11 +14,11 @@ class ContactsController < ApplicationController
     # Else send via API
     else
       # First, instantiate the Mailgun Client with your API key
-      mg_client = Mailgun::Client.new ENV['MAILGUN_API_KEY']
+      mg_client = Mailgun::Client.new ENV['pubkey-5d1ed0b7410e40c6d540d0fbb4133fc5']
 
       # Define your message parameters
       html_output = render_to_string template: "notifier/send_email"
-      message_params = {:from    => 'Mailgun Test Project <postmaster@' + ENV['MAILGUN_DOMAIN'] + ">",
+      message_params = {:from    => 'Mailgun Test Project <seanjhulse@' + ENV['mg.coffee-and-cream.com'] + ">",
                         :to      => @message[:to],
                         :subject => 'Mailgun message via API',
                         :text    => @message[:body],
@@ -26,7 +26,7 @@ class ContactsController < ApplicationController
                         "o:tag"  => 'test'}
 
       # Send your message through the client
-      mg_client.send_message ENV['MAILGUN_DOMAIN'], message_params
+      mg_client.send_message ENV['mg.coffee-and-cream.com'], message_params
       # Redirect on success
       redirect_to root_path, notice: 'Message was sent via API.'
     end
