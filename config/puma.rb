@@ -5,7 +5,6 @@
 # and maximum, this matches the default thread size of Active Record.
 #
 # config/puma.rb
-workers Integer(ENV['WEB_CONCURRENCY'] || 2)
 threads_count = ENV.fetch("RAILS_MAX_THREADS") { 5 }.to_i
 threads threads_count, threads_count
 
