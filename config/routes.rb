@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/home' => 'welcome#index'
   get '/login' => 'users#new'
-  post '/signup' => 'users#create'
-  post   '/login' => 'sessions#create'
+  post '/login/create' => 'users#create'
+  post   '/login/signin' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
 resources :users
 end
