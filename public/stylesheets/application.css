@@ -1,0 +1,149 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ /*
+ body {
+     background-color: #FFFFFF;
+     margin: 0;
+ }
+
+#spacer{
+  padding-top:25px;
+}
+
+.nav ul {
+  list-style: none;
+  background-color: #c55509;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  opacity: 0.85;
+}
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+
+.nav a:hover {
+  background-color: #008abd;
+  opacity: 0.85;
+}
+
+.nav a.active {
+  background-color: #fff;
+  color: #c55509;
+  cursor: default;
+}
+
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+
+}
+
+span {
+  background: #c55509;
+  display: -webkit-inline-box;
+  -webkit-box-align: center;
+  border-radius: 15px 50px;
+  opacity: 0.85;
+  color: white;
+  text-align: center;
+  padding-left: 25px;
+}
+
+#sub-span {
+  display: -webkit-box;
+  background: #008abd;
+  border-radius: 15px 15px 15px 15px;
+  opacity: 0.65;
+  color: white;
+  text-align: -webkit-center;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#wrapper {
+     width: 1650px;
+     padding-top: 25px;
+     margin: 0 auto;
+ }
+ #leftcolumn, #rightcolumn {
+     padding-top: 15px;
+     border: 1px solid white;
+     float: left;
+     margin: 0 auto;
+     color: #000000;
+     text-align: center;
+ }
+ #leftcolumn {
+      width: 800px;
+      background-color: #FFFFFF;
+ }
+ #rightcolumn {
+      width: 800px;
+      background-color: #FFFFFF;
+ }
+
+ #page-break {
+   margin: 0 auto;
+   text-align: center;
+   padding-top: 40px;
+   padding-bottom: 40px;
+ }
+
+ .hideme {
+     opacity:0;
+ }
+
+ .center-webkit {
+   margin: 0 auto;
+   display: -webkit-box;
+   -webkit-box-align: center;
+   padding-top: 5px;
+ }
+
+ center-field{
+   margin-left: 50%;
+   text-align: -webkit-center;
+   margin-right: 50%;
+ }
+
+ #moz-reflect:after {
+  content: "";
+  display: block;
+  background: -moz-element(#moz-reflect) no-repeat;
+  width: auto;
+  height: 375px;
+  margin-bottom: 100px;
+  -moz-transform: scaleY(-1);
+}
+*/
