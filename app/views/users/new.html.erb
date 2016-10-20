@@ -31,10 +31,24 @@
   </div>
 </div>
 <div id="spacer">
+  <h1 class="w3-margin w3-jumbo">Login</h1>
+
+    <%= form_for :session, html: { class: 'w3-container' }, url: '/login' do |f| %>
+      <%= f.text_field :email, class: "w3-input", type: "text", :required => true %>
+      <%= f.label :email, 'email', class: "w3-label w3-validate" %>
+
+      <%= f.text_field :password, class: "w3-input", type: "password", :required => true %>
+      <%= f.label :password, 'password', class: "w3-label w3-validate" %>
+    </br>
+    </br>
+    <%= f.submit "Submit" %>
+    <% end %>
+</div>
+<div id="spacer">
   <h1 class="w3-margin w3-jumbo">Signup</h1>
 
     <%= form_for :user, html: { class: 'w3-container' }, url: '/signup' do |f| %>
-      <%= f.text_field :name, class: "w3-input", type: "text", :required => true %>
+      <%= f.text_field :name, class: "w3-input", type: "text", :required => true, help: "Must be at least 6 characters long"  %>
       <%= f.label :name, 'username', class: "w3-label w3-validate" %>
 
       <%= f.text_field :email, class: "w3-input", type: "email", :required => true %>
@@ -45,6 +59,8 @@
 
       <%= f.text_field :password_confirmation, class: "w3-input", type: "password", :required => true %>
       <%= f.label :password_confirmation, 'confirm password', class: "w3-label w3-validate" %>
+    </br>
+    </br>
     <%= f.submit "Submit" %>
     <% end %>
 </div>

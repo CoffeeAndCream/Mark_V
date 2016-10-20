@@ -17,5 +17,6 @@
 //= require fusioncharts/themes/fusioncharts.theme.fint
 //= require Chart.bundle
 //= require chartkick
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
