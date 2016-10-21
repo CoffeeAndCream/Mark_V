@@ -4,6 +4,10 @@ class WelcomeController < ApplicationController
   # The `fc_hash` function is defined to load data from a Ruby Hash. This data will be converted to
   # JSON and the chart will be rendered.
   def index
+    @user = current_user
+      respond_to do |format|
+      format.html # index.html.erb
+    end
     @import_jp_data = reduce_data(create_hash('public/datasets/IMPJP.csv'))
     @import_ch_data = reduce_data(create_hash('public/datasets/IMPCH.csv'))
 
