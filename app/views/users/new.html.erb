@@ -13,7 +13,16 @@
     <li class="w3-hide-medium w3-hide-large w3-opennav w3-right">
       <a class="w3-padding-large w3-hover-orange w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     </li>
-    <li><a href="#" class="w3-padding-large w3-white">Cafe</a></li>
+    <li>
+      <% if logged_in?%>
+        <%= gravatar_for @user %>
+      <font size="4px" style="position: relative;bottom: 5px">
+        <%= @user.name %>
+      </font>
+    <% else %>
+          <li><a href="#" class="w3-padding-large w3-white">Cafe</a></li>
+    <% end %>
+    </li>
     <li class="w3-hide-small"><a href="home" class="w3-padding-large w3-hover-blue">Home</a></li>
    <li class="w3-hide-small"><a href="about" class="w3-padding-large w3-hover-blue">About</a></li>
     <li class="w3-hide-small"><a href="contact" class="w3-padding-large w3-hover-blue">Contact</a></li>
@@ -30,6 +39,7 @@
     </ul>
   </div>
 </div>
+
 <div id="spacer">
   <h1 class="w3-margin w3-jumbo">Login</h1>
 
