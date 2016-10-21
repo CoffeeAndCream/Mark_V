@@ -62,7 +62,6 @@
       <img src="/images/coffee-animated-gif-5.gif" alt="Coffee Cup" width="180" height="194" align="left">
     </div>
   </div>
-  <div id="wrapper">
     <div id="leftcolumn">
       <p>Imports ($) from Japan to the USA</p>
       <%= line_chart @import_jp_data, max: 50000, colors: ["gray"], xtitle: "Time", ytitle: "$ (millions)", width: "800px" %>
@@ -72,7 +71,6 @@
       <%= line_chart @import_ch_data, xtitle: "Time", ytitle: "$ (millions)", width: "800px" %>
     </div>
   </div>
-</div>
 <!-- Second Grid -->
 <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
   <div class="w3-content">
